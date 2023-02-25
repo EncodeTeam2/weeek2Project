@@ -5,33 +5,76 @@ Develop and run scripts for “Ballot.sol” within your group to give voting ri
 Write a report with each function execution and the transaction hash, if successful, or the revert reason, if failed
 Submit your code in a github repository in the form.
 
-## Setup
+# Setup
 
 ```
 yarn install
 yarn hardhat compile
 ```
 
-## Test
+# Test
 
 ```
 yarn hardhat test
 ```
 
-## Deploy
+# Interact
 
-Put your .env file at root. It should contain:
+First, put your .env file at root. It should contain:
 
 ```
-PRIVATE_KEY=""
-INFURA_API_KEY=""
-INFURA_API_SECRET=""
-ALCHEMY_API_KEY=""
-ETHERSCAN_API_KEY=""
+CONTRACT_ADDRESS=
+CHAIRPERSON_PRIVATE_KEY=
+VOTER_PRIVATE_KEY=
+VOTER_DELEGATES_PRIVATE_KEY=
+INFURA_API_KEY=
+INFURA_API_SECRET=
+ALCHEMY_API_KEY=
+ETHERSCAN_API_KEY=
 ```
 
-To run Deployment script:
+## Deploy setting Chairperson
+
+To run script, pass desired proposals as arguments:
 
 ```
 yarn run ts-node --files ./scripts/Deployment.ts "Proposal 1" "Proposal 2" "Proposal 3"
+```
+
+Now, grab returned contract address and add it to .env inside CONTRACT_ADDRESS=
+
+## Give rights to vote to Voter and Voter Delegates as Chairperson
+
+To run script, pass desired address as argument:
+
+```
+yarn run ts-node --files ./scripts/GiveRightToVote.ts "address voter"
+```
+
+```
+yarn run ts-node --files ./scripts/GiveRightToVote.ts "address voter delegates"
+```
+
+## Delegate vote from Voter Delegates to Voter
+
+To run script, pass desired address as argument:
+
+```
+yarn run ts-node --files ./scripts/Delegate.ts "address voter"
+```
+
+## Vote as Voter
+
+To run script, pass desired proposal number as argument:
+
+```
+yarn run ts-node --files ./scripts/Vote.ts "number"
+```
+
+## Check winning proposal and winner name
+
+To run script, run following command with no arguments:
+
+```
+yarn run ts-node --files ./scripts/WinningProposalAndWinnerName.ts
 ```
