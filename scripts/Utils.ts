@@ -16,7 +16,7 @@ export function configureWallet(privateKey:string | undefined):ethers.Wallet {
     // Configure provider as goerli
 
     const provider = ethers.providers.getDefaultProvider("goerli", {
-        // Provide personal keys from enviroment.
+        // Provide personal keys from environment.
         alchemy: process.env.ALCHEMY_API_KEY,
         etherscan: process.env.ETHERSCAN_API_KEY,
         infura: {

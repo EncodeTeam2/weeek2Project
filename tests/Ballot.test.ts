@@ -266,7 +266,7 @@ describe("Ballot.sol tests", () => {
           
           // Get winner proposal
           const winnerProposal = await (await ballotContract.winningProposal()).toNumber()
-          // Expecte winner name equal to the index given by winner proposal in our proposals array.
+          // Expect winner name equal to the index given by winner proposal in our proposals array.
           expect(await ballotContract.winnerName()).to.be.equal(ethers.utils.formatBytes32String(PROPOSALS[winnerProposal]))
           
         });
