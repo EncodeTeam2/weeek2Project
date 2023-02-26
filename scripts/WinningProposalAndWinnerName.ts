@@ -15,9 +15,9 @@ async function WinningProposalAndWinnerNameScript() {
     const contractInstance: Ballot = await attachToBallot(signer);
 
     // Grabbing the values from winning proposal and winner proposal name
-    const winningVotes: BigNumber = await contractInstance.winningProposal();
+    const winningProposalIndex: BigNumber = await contractInstance.winningProposal();
     const winningProposal: string = await contractInstance.winnerName();
-
+    const winningVotes: BigNumber = await (await contractInstance.proposals(winningProposalIndex)).voteCount
     // conditional message based on how many votes may or may not have been casted
     if (Number(winningVotes) == 0) {
         console.log(`${ethers.utils.parseBytes32String(winningProposal)} has won since there are no votes`);
