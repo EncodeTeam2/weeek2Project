@@ -5,24 +5,24 @@ Develop and run scripts for “Ballot.sol” within your group to give voting ri
 Write a report with each function execution and the transaction hash, if successful, or the revert reason, if failed
 Submit your code in a github repository in the form.
 
-# Setup
+## Setup
 
-```
+```shell
 yarn install
 yarn hardhat compile
 ```
 
-# Test
+## Test
 
-```
+```shell
 yarn hardhat test
 ```
 
-# Interact
+## Interact
 
 First, put your .env file at root. It should contain:
 
-```
+```shell
 CONTRACT_ADDRESS=
 CHAIRPERSON_PRIVATE_KEY=
 VOTER_PRIVATE_KEY=
@@ -37,7 +37,7 @@ ETHERSCAN_API_KEY=
 
 To run script, pass desired proposals as arguments:
 
-```
+```shell
 yarn run ts-node --files ./scripts/Deployment.ts "Proposal 1" "Proposal 2" "Proposal 3"
 ```
 
@@ -47,11 +47,11 @@ Now, grab returned contract address and add it to .env inside CONTRACT_ADDRESS=
 
 To run script, pass desired address as argument:
 
-```
+```shell
 yarn run ts-node --files ./scripts/GiveRightToVote.ts "address voter"
 ```
 
-```
+```shell
 yarn run ts-node --files ./scripts/GiveRightToVote.ts "address voter delegates"
 ```
 
@@ -59,7 +59,7 @@ yarn run ts-node --files ./scripts/GiveRightToVote.ts "address voter delegates"
 
 To run script, pass desired address as argument:
 
-```
+```shell
 yarn run ts-node --files ./scripts/Delegate.ts "address voter"
 ```
 
@@ -67,7 +67,7 @@ yarn run ts-node --files ./scripts/Delegate.ts "address voter"
 
 To run script, pass desired proposal number as argument:
 
-```
+```shell
 yarn run ts-node --files ./scripts/Vote.ts "number"
 ```
 
@@ -75,6 +75,6 @@ yarn run ts-node --files ./scripts/Vote.ts "number"
 
 To run script, run following command with no arguments:
 
-```
+```shell
 yarn run ts-node --files ./scripts/WinningProposalAndWinnerName.ts
 ```
