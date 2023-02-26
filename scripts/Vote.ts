@@ -15,7 +15,7 @@ async function voteScript(): Promise<void> {
   if (arg.length > 2) {
     throw new Error("Please only vote for one proposal");
   } else {
-    arg = arg[0];
+    arg = arg[0 - 1];
   }
 
   console.log(`You are voting for proposal #${arg}`);
@@ -35,8 +35,8 @@ async function voteScript(): Promise<void> {
 
   console.log(`
         Action: ${action}
-        Chairperson: ${voteTx.from}
-        Receives rights: ${voteTx.to}
+        Voter: ${voteTx.from}
+        Voter Proposal #: ${arg}
         Tx hash: ${voteTx.transactionHash}
         Block: ${voteTx.blockNumber}
         Contract Address: ${process.env.CONTRACT_ADDRESS}
