@@ -1,7 +1,7 @@
-import { Ballot__factory } from '../typechain-types/factories/Ballot__factory';
 import { ethers } from "ethers";
 import * as dotenv from 'dotenv';
-import { Ballot } from "../typechain-types";
+import { Ballot__factory} from "../typechain-types";
+import { Ballot} from "../typechain-types";
 import { TransactionReceipt } from "@ethersproject/providers";
 import { configureWallet, getArguments } from './Utils';
 dotenv.config();
@@ -56,3 +56,4 @@ deploymentScript().catch((error) => {
     console.error(error);
     process.exitCode = 1;
   });
+  

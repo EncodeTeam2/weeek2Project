@@ -21,7 +21,7 @@ export function configureWallet(privateKey:string | undefined):ethers.Wallet {
         etherscan: process.env.ETHERSCAN_API_KEY,
         infura: {
             projectId: process.env.INFURA_API_KEY,
-            projectSecret: process.env.INFURA_API_SECRET, 
+            //projectSecret: process.env.INFURA_API_SECRET, 
         }
     }) 
 
